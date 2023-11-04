@@ -31,16 +31,6 @@ class Users::SessionsController < Devise::SessionsController
   private
 
   def respond_with(resource, _opts = {})
-    puts '=============================='
-    puts resource.to_json
-    puts '=============================='
-    puts UserSerializer.new(resource).serializable_hash[:data][:attributes]
-    puts '=============================='
-    puts request.body.to_json
-    puts '=============================='
-    puts resource 
-    puts '=============================='
-
     render json: {
       status: {code: 200, message: 'Logged in sucessfully.'},
       data: UserSerializer.new(resource).serializable_hash[:data][:attributes]

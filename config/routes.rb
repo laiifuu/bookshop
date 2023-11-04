@@ -8,4 +8,5 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations'
   }
+  get '/books', to: 'books#index'
 end
